@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
+[ext_resource path="res://Player.gd" type="Script" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -15,28 +16,34 @@ albedo_color = Color( 0.913725, 0.568627, 0.0745098, 1 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 1 )
+rotation_speed = 0.5
 
 [node name="Floor" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
-transform = Transform( 20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 0, 0 )
+transform = Transform( 60, 0, 0, 0, 0.1, 0, 0, 0, 60, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
-transform = Transform( 20, 0, 0, 0, 0.1, 0, 0, 0, 20, 0, 0, 0 )
+transform = Transform( 60, 0, 0, 0, 0.1, 0, 0, 0, 60, 0, 0, 0 )
 shape = SubResource( 3 )
 
 [node name="CameraRef" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
 
 [node name="Camera" type="Camera" parent="CameraRef"]
-transform = Transform( 1, 0, 0, 0, 0.970502, 0.241092, 0, -0.241092, 0.970502, 0, 2.82516, 0 )
+fov = 52.7
 
 [node name="Center" type="Spatial" parent="."]
 
 [node name="Player" type="RigidBody" parent="Center"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.9878 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -49.5299 )
+script = ExtResource( 2 )
+speed = 59.162
+jumpForce = 2088.13
+radius = 70.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Center/Player"]
 mesh = SubResource( 4 )
@@ -44,3 +51,8 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Center/Player"]
 shape = SubResource( 5 )
+
+[node name="RemoteTransform" type="RemoteTransform" parent="Center/Player"]
+remote_path = NodePath("../../../CameraRef")
+update_position = false
+update_scale = false
