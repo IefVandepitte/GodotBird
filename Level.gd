@@ -14,7 +14,11 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
+func _process(delta):
+#	$CameraRef/Camera.look_at($Center/Player.translation, Vector3(0,0,0))
+#	$CameraRef/Camera.rotate_y($Center/Player.translation.x + $Center/Player.translation.z)
+	var target = $Center/Player.global_transform.origin
+	$CameraRef/Camera.look_at(target, Vector3.UP)
 	#https://kidscancode.org/godot_recipes/basics/rotation/
 #	$Center.rotate_y(rotation_speed * delta)
 	

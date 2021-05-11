@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Camera.gd" type="Script" id=3]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -31,18 +32,19 @@ transform = Transform( 60, 0, 0, 0, 0.1, 0, 0, 0, 60, 0, 0, 0 )
 shape = SubResource( 3 )
 
 [node name="CameraRef" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
 
 [node name="Camera" type="Camera" parent="CameraRef"]
-fov = 52.7
+far = 300.4
+script = ExtResource( 3 )
 
 [node name="Center" type="Spatial" parent="."]
 
 [node name="Player" type="RigidBody" parent="Center"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -49.5299 )
 script = ExtResource( 2 )
-speed = 59.162
-jumpForce = 2088.13
+speed = 8.0
+jumpForce = 5.0
 radius = 70.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Center/Player"]
@@ -51,8 +53,3 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Center/Player"]
 shape = SubResource( 5 )
-
-[node name="RemoteTransform" type="RemoteTransform" parent="Center/Player"]
-remote_path = NodePath("../../../CameraRef")
-update_position = false
-update_scale = false
