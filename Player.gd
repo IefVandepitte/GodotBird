@@ -7,7 +7,7 @@ export (float, 1, 360) var angle = 0
 
 var _this
 var _x
-var _y = 10
+var _y 
 var _z
 
 # Declare member variables here. Examples:
@@ -19,15 +19,17 @@ var _z
 func _ready():
 	_this = $"."
 	_x = _this.translation.x
+	_y = _this.translation.y
+	_z = _this.translation.z
 
 func _input(event):	
-	var force = Vector3(0,0,0)
+#	var force = Vector3(0,0,0)
 	if event is InputEventKey and event.pressed :
 			if event.scancode == KEY_SPACE:
 				_y = _y + jumpForce
 	elif event is InputEventScreenTouch :
 		if event.is_pressed():
-			print("touched")
+#			print("touched")
 			_y = _y + jumpForce
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

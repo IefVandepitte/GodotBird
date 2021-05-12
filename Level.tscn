@@ -1,8 +1,10 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Level.gd" type="Script" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://Camera.gd" type="Script" id=3]
+[ext_resource path="res://Obstacle.tscn" type="PackedScene" id=4]
+[ext_resource path="res://ScoreArea.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 
@@ -17,35 +19,44 @@ albedo_color = Color( 0.913725, 0.568627, 0.0745098, 1 )
 
 [node name="Level" type="Spatial"]
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_vertical_guides_": [ 511.685 ]
+}
 rotation_speed = 0.5
 
 [node name="Floor" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Floor"]
-transform = Transform( 60, 0, 0, 0, 0.1, 0, 0, 0, 60, 0, 0, 0 )
+transform = Transform( 1000, 0, 0, 0, 0.1, 0, 0, 0, 1000, 0, 0, 0 )
 mesh = SubResource( 1 )
 material/0 = SubResource( 2 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
-transform = Transform( 60, 0, 0, 0, 0.1, 0, 0, 0, 60, 0, 0, 0 )
+transform = Transform( 1000, 0, 0, 0, 1, 0, 0, 0, 1000, 0, 0, 0 )
 shape = SubResource( 3 )
 
 [node name="CameraRef" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0 )
 
 [node name="Camera" type="Camera" parent="CameraRef"]
-far = 300.4
+visible = false
+fov = 9.9
+near = 0.01
+far = 8192.0
 script = ExtResource( 3 )
 
 [node name="Center" type="Spatial" parent="."]
 
 [node name="Player" type="RigidBody" parent="Center"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, -49.5299 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 169.592, 50, -574.447 )
+can_sleep = false
 script = ExtResource( 2 )
-speed = 8.0
-jumpForce = 5.0
-radius = 70.0
+speed = 6.0
+jumpForce = 2.0
+fallForce = 0.1
+radius = 599.0
+angle = 60.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Center/Player"]
 mesh = SubResource( 4 )
@@ -53,3 +64,102 @@ material/0 = null
 
 [node name="CollisionShape" type="CollisionShape" parent="Center/Player"]
 shape = SubResource( 5 )
+
+[node name="Obstacles" type="Spatial" parent="."]
+
+[node name="E" type="Spatial" parent="Obstacles"]
+
+[node name="East_sky" parent="Obstacles/E" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 600, 100, 0 )
+
+[node name="East" parent="Obstacles/E" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 600, 0, 0 )
+
+[node name="ScoreArea" parent="Obstacles/E" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 600, 51, 0 )
+
+[node name="W" type="Spatial" parent="Obstacles"]
+
+[node name="West" parent="Obstacles/W" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -600, 0, 0 )
+
+[node name="WestSky" parent="Obstacles/W" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -600, 100, 0 )
+
+[node name="ScoreArea" parent="Obstacles/W" instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -600, 51, 0 )
+
+[node name="S" type="Spatial" parent="Obstacles"]
+
+[node name="ScoreArea" parent="Obstacles/S" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 51, 600 )
+
+[node name="South" parent="Obstacles/S" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 600 )
+
+[node name="SouthSky" parent="Obstacles/S" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 600 )
+
+[node name="N" type="Spatial" parent="Obstacles"]
+
+[node name="North" parent="Obstacles/N" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -600 )
+
+[node name="NorthSky" parent="Obstacles/N" instance=ExtResource( 4 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, -600 )
+
+[node name="ScoreArea" parent="Obstacles/N" instance=ExtResource( 5 )]
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 51, -600 )
+
+[node name="UI" type="CanvasLayer" parent="."]
+pause_mode = 2
+
+[node name="Label" type="Label" parent="UI"]
+anchor_left = 0.5
+anchor_top = 0.971
+anchor_right = 0.5
+anchor_bottom = 0.971
+margin_left = -29.0
+margin_right = 28.0
+margin_bottom = 14.0
+text = "SCORE: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="UI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.674
+anchor_right = 0.5
+anchor_bottom = 0.674
+margin_left = -31.0
+margin_right = 34.0
+margin_bottom = 20.0
+text = "RESTART"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GameOverControl" type="Control" parent="UI"]
+visible = false
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="UI/GameOverControl"]
+margin_left = -37.5858
+margin_right = 38.4142
+margin_bottom = 14.0
+text = "GAME OVER"
+
+[node name="DirectionalLight" type="DirectionalLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 0.0871558, 0.996195, 0, -0.996195, 0.0871558, 0, 600, 0 )
+
+[connection signal="pressed" from="UI/Button" to="." method="_on_Button_pressed"]
