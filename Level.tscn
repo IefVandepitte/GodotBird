@@ -335,14 +335,17 @@ transform = Transform( -0.946531, 0, 0.322613, 0, 1, 0, -0.322613, 0, -0.946531,
 [node name="UI" type="CanvasLayer" parent="."]
 pause_mode = 2
 
-[node name="Label" type="Label" parent="UI"]
+[node name="ScoreLabel" type="Label" parent="UI"]
 anchor_left = 0.5
-anchor_top = 0.971
+anchor_top = 1.0
 anchor_right = 0.5
-anchor_bottom = 0.971
-margin_left = -29.0
-margin_right = 28.0
-margin_bottom = 14.0
+anchor_bottom = 1.0
+margin_left = -86.5064
+margin_top = -47.7311
+margin_right = -29.5064
+margin_bottom = -33.7311
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "SCORE: 0"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -351,12 +354,14 @@ __meta__ = {
 [node name="Button" type="Button" parent="UI"]
 visible = false
 anchor_left = 0.5
-anchor_top = 0.674
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 0.674
-margin_left = -31.0
-margin_right = 34.0
-margin_bottom = 20.0
+anchor_bottom = 0.5
+margin_left = -99.9535
+margin_top = 109.317
+margin_right = -34.9535
+margin_bottom = 129.317
+rect_scale = Vector2( 3, 3 )
 text = "RESTART"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -375,17 +380,27 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="UI/GameOverControl"]
-margin_left = -37.5858
-margin_right = 38.4142
-margin_bottom = 14.0
+margin_left = -188.947
+margin_top = -42.0448
+margin_right = -112.947
+margin_bottom = -28.0448
+rect_scale = Vector2( 5, 5 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
 text = "GAME OVER"
+
+[node name="HighscoreLabel" type="Label" parent="UI"]
+visible = false
+margin_right = 40.0
+margin_bottom = 14.0
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_color = Color( 0, 0, 0, 1 )
+text = "Highscore: 0"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.0871558, 0.996195, 0, -0.996195, 0.0871558, 0, 600, 0 )
-
-[node name="CSGSphere" type="CSGSphere" parent="."]
-transform = Transform( 600, 0, 0, 0, 1, 0, 0, 0, 600, 0, 0, 0 )
-radial_segments = 100
 
 [node name="START" type="CSGBox" parent="."]
 transform = Transform( 2, 0, 0, 0, 30, 0, 0, 0, 2, 326.855, 0, 434.18 )
