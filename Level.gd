@@ -64,6 +64,7 @@ func _on_Button_pressed():
 	get_tree().reload_current_scene()
 	get_tree().paused = false
 
+#https://godotengine.org/qa/2080/save-record
 func _create_save():
 	saveGame.open(save_path, File.WRITE)
 	saveGame.store_var(save_data)
