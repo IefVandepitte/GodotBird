@@ -41,7 +41,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 25, 0 )
 
 [node name="Camera" type="Camera" parent="CameraRef"]
 visible = false
-fov = 9.9
+fov = 14.8
 near = 0.01
 far = 8192.0
 script = ExtResource( 3 )
@@ -52,11 +52,11 @@ script = ExtResource( 3 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 169.592, 50, -574.447 )
 can_sleep = false
 script = ExtResource( 2 )
-speed = 6.0
+speed = 2.0
 jumpForce = 2.0
 fallForce = 0.1
 radius = 599.0
-angle = 60.0
+angle = 1.0
 
 [node name="MeshInstance" type="MeshInstance" parent="Center/Player"]
 mesh = SubResource( 4 )
@@ -103,13 +103,234 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, 600 )
 [node name="N" type="Spatial" parent="Obstacles"]
 
 [node name="North" parent="Obstacles/N" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -600 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.4276, -600 )
 
 [node name="NorthSky" parent="Obstacles/N" instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 100, -600 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 97.5724, -600 )
 
 [node name="ScoreArea" parent="Obstacles/N" instance=ExtResource( 5 )]
-transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 51, -600 )
+transform = Transform( -4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 48.5724, -600 )
+
+[node name="NE1" type="Spatial" parent="Obstacles"]
+
+[node name="North" parent="Obstacles/NE1" instance=ExtResource( 4 )]
+transform = Transform( 0.958904, 0, -0.283731, 0, 1, 0, 0.283731, 0, 0.958904, 137.915, 18.2648, -583.988 )
+
+[node name="NorthSky" parent="Obstacles/NE1" instance=ExtResource( 4 )]
+transform = Transform( 0.958904, 0, -0.283731, 0, 1, 0, 0.283731, 0, 0.958904, 137.915, 118.265, -583.988 )
+
+[node name="ScoreArea" parent="Obstacles/NE1" instance=ExtResource( 5 )]
+transform = Transform( 0.283731, 0, 0.958904, 0, 1, 0, -0.958904, 0, 0.283731, 137.915, 69.2648, -583.988 )
+
+[node name="NE2" type="Spatial" parent="Obstacles"]
+
+[node name="North" parent="Obstacles/NE2" instance=ExtResource( 4 )]
+transform = Transform( 0.953596, 0, -0.301089, 0, 1, 0, 0.301089, 0, 0.953596, 271.475, -11.8303, -534.567 )
+
+[node name="NorthSky" parent="Obstacles/NE2" instance=ExtResource( 4 )]
+transform = Transform( 0.953596, 0, -0.301089, 0, 1, 0, 0.301089, 0, 0.953596, 271.475, 88.1697, -534.567 )
+
+[node name="ScoreArea" parent="Obstacles/NE2" instance=ExtResource( 5 )]
+transform = Transform( 0.301089, 0, 0.953596, 0, 1, 0, -0.953596, 0, 0.301089, 271.475, 39.1697, -534.567 )
+
+[node name="NE3" type="Spatial" parent="Obstacles"]
+
+[node name="North" parent="Obstacles/NE3" instance=ExtResource( 4 )]
+transform = Transform( 0.715071, 0, -0.699052, 0, 1, 0, 0.699052, 0, 0.715071, 409.782, 25.7029, -439.656 )
+
+[node name="NorthSky" parent="Obstacles/NE3" instance=ExtResource( 4 )]
+transform = Transform( 0.715071, 0, -0.699052, 0, 1, 0, 0.699052, 0, 0.715071, 406.802, 125.703, -441.008 )
+
+[node name="ScoreArea" parent="Obstacles/NE3" instance=ExtResource( 5 )]
+transform = Transform( 0.699052, 0, 0.715071, 0, 1, 0, -0.715071, 0, 0.699052, 406.802, 76.703, -441.008 )
+
+[node name="NE4" type="Spatial" parent="Obstacles"]
+
+[node name="North" parent="Obstacles/NE4" instance=ExtResource( 4 )]
+transform = Transform( 0.668832, 3.12435e-10, -0.743413, -4.69942e-10, 1, -2.52724e-12, 0.743413, 3.5105e-10, 0.668832, 496.552, -8.68068, -336.197 )
+
+[node name="NorthSky" parent="Obstacles/NE4" instance=ExtResource( 4 )]
+transform = Transform( 0.668832, 3.12435e-10, -0.743413, -4.69942e-10, 1, -2.52724e-12, 0.743413, 3.5105e-10, 0.668832, 496.552, 91.3193, -336.197 )
+
+[node name="ScoreArea" parent="Obstacles/NE4" instance=ExtResource( 5 )]
+transform = Transform( 0.743413, 3.12435e-10, 0.668832, 2.52726e-12, 1, -4.69942e-10, -0.668832, 3.5105e-10, 0.743413, 496.552, 42.3193, -336.197 )
+
+[node name="NE5" type="Spatial" parent="Obstacles"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -68.148, 0 )
+
+[node name="North" parent="Obstacles/NE5" instance=ExtResource( 4 )]
+transform = Transform( 0.254214, 0, -0.967148, 0, 1, 0, 0.967148, 0, 0.254214, 573.728, 93.0131, -173.88 )
+
+[node name="NorthSky" parent="Obstacles/NE5" instance=ExtResource( 4 )]
+transform = Transform( 0.254214, 0, -0.967148, 0, 1, 0, 0.967148, 0, 0.254214, 573.728, 193.013, -173.88 )
+
+[node name="ScoreArea" parent="Obstacles/NE5" instance=ExtResource( 5 )]
+transform = Transform( 0.967148, 0, 0.254214, 0, 1, 0, -0.254214, 0, 0.967148, 573.728, 144.013, -173.88 )
+
+[node name="ES1" type="Spatial" parent="Obstacles"]
+
+[node name="East_sky" parent="Obstacles/ES1" instance=ExtResource( 4 )]
+transform = Transform( 0.944319, 0, -0.329031, 0, 1, 0, 0.329031, 0, 0.944319, 581.899, 81.8465, 144.34 )
+
+[node name="East" parent="Obstacles/ES1" instance=ExtResource( 4 )]
+transform = Transform( 0.944319, 0, -0.329031, 0, 1, 0, 0.329031, 0, 0.944319, 581.899, -18.1535, 144.34 )
+
+[node name="ScoreArea" parent="Obstacles/ES1" instance=ExtResource( 5 )]
+transform = Transform( 0.944319, 0, -0.329031, 0, 1, 0, 0.329031, 0, 0.944319, 581.899, 32.8465, 144.34 )
+
+[node name="ES2" type="Spatial" parent="Obstacles"]
+
+[node name="East_sky" parent="Obstacles/ES2" instance=ExtResource( 4 )]
+transform = Transform( 0.825705, 0, -0.564103, 0, 1, 0, 0.564103, 0, 0.825705, 518.989, 113.536, 299.203 )
+
+[node name="East" parent="Obstacles/ES2" instance=ExtResource( 4 )]
+transform = Transform( 0.825705, 0, -0.564103, 0, 1, 0, 0.564103, 0, 0.825705, 518.989, 13.5356, 299.203 )
+
+[node name="ScoreArea" parent="Obstacles/ES2" instance=ExtResource( 5 )]
+transform = Transform( 0.825705, 0, -0.564103, 0, 1, 0, 0.564103, 0, 0.825705, 518.989, 64.5356, 299.203 )
+
+[node name="ES3" type="Spatial" parent="Obstacles"]
+
+[node name="East_sky" parent="Obstacles/ES3" instance=ExtResource( 4 )]
+transform = Transform( 0.730913, 0, -0.682471, 0, 1, 0, 0.682471, 0, 0.730913, 408.596, 83.852, 439.025 )
+
+[node name="East" parent="Obstacles/ES3" instance=ExtResource( 4 )]
+transform = Transform( 0.730913, 0, -0.682471, 0, 1, 0, 0.682471, 0, 0.730913, 408.596, -16.148, 439.025 )
+
+[node name="ScoreArea" parent="Obstacles/ES3" instance=ExtResource( 5 )]
+transform = Transform( 0.730913, 0, -0.682471, 0, 1, 0, 0.682471, 0, 0.730913, 408.596, 34.852, 439.025 )
+
+[node name="ES4" type="Spatial" parent="Obstacles"]
+
+[node name="East_sky" parent="Obstacles/ES4" instance=ExtResource( 4 )]
+transform = Transform( 0.389847, 0, -0.920879, 0, 1, 0, 0.920879, 0, 0.389847, 278.128, 115.69, 531.768 )
+
+[node name="East" parent="Obstacles/ES4" instance=ExtResource( 4 )]
+transform = Transform( 0.389847, 0, -0.920879, 0, 1, 0, 0.920879, 0, 0.389847, 278.128, 15.6905, 531.768 )
+
+[node name="ScoreArea" parent="Obstacles/ES4" instance=ExtResource( 5 )]
+transform = Transform( 0.389847, 0, -0.920879, 0, 1, 0, 0.920879, 0, 0.389847, 278.128, 66.6905, 531.768 )
+
+[node name="ES5" type="Spatial" parent="Obstacles"]
+
+[node name="East_sky" parent="Obstacles/ES5" instance=ExtResource( 4 )]
+transform = Transform( 0.332227, 0, -0.943199, 0, 1, 0, 0.943199, 0, 0.332227, 146.66, 83.431, 581.143 )
+
+[node name="East" parent="Obstacles/ES5" instance=ExtResource( 4 )]
+transform = Transform( 0.332227, 0, -0.943199, 0, 1, 0, 0.943199, 0, 0.332227, 146.66, -16.569, 581.143 )
+
+[node name="ScoreArea" parent="Obstacles/ES5" instance=ExtResource( 5 )]
+transform = Transform( 0.332227, 0, -0.943199, 0, 1, 0, 0.943199, 0, 0.332227, 146.66, 34.431, 581.143 )
+
+[node name="SW1" type="Spatial" parent="Obstacles"]
+
+[node name="ScoreArea" parent="Obstacles/SW1" instance=ExtResource( 5 )]
+transform = Transform( 0.287461, 0, 0.957792, 0, 1, 0, -0.957792, 0, 0.287461, -155.205, 36.884, 579.001 )
+
+[node name="South" parent="Obstacles/SW1" instance=ExtResource( 4 )]
+transform = Transform( 0.957792, 0, -0.287461, 0, 1, 0, 0.287461, 0, 0.957792, -155.205, -14.116, 579.001 )
+
+[node name="SouthSky" parent="Obstacles/SW1" instance=ExtResource( 4 )]
+transform = Transform( 0.957792, 0, -0.287461, 0, 1, 0, 0.287461, 0, 0.957792, -155.205, 85.884, 579.001 )
+
+[node name="SW2" type="Spatial" parent="Obstacles"]
+
+[node name="ScoreArea" parent="Obstacles/SW2" instance=ExtResource( 5 )]
+transform = Transform( 0.372696, 0, 0.927953, 0, 1, 0, -0.927953, 0, 0.372696, -292.334, 70.7826, 523.239 )
+
+[node name="South" parent="Obstacles/SW2" instance=ExtResource( 4 )]
+transform = Transform( 0.927953, 0, -0.372696, 0, 1, 0, 0.372696, 0, 0.927953, -292.334, 19.7826, 523.239 )
+
+[node name="SouthSky" parent="Obstacles/SW2" instance=ExtResource( 4 )]
+transform = Transform( 0.927953, 0, -0.372696, 0, 1, 0, 0.372696, 0, 0.927953, -292.334, 119.783, 523.239 )
+
+[node name="SW3" type="Spatial" parent="Obstacles"]
+
+[node name="ScoreArea" parent="Obstacles/SW3" instance=ExtResource( 5 )]
+transform = Transform( 0.63307, 0, 0.774094, 0, 1, 0, -0.774094, 0, 0.63307, -437.304, 39.6692, 411.564 )
+
+[node name="South" parent="Obstacles/SW3" instance=ExtResource( 4 )]
+transform = Transform( 0.774094, 0, -0.63307, 0, 1, 0, 0.63307, 0, 0.774094, -437.304, -11.3308, 411.564 )
+
+[node name="SouthSky" parent="Obstacles/SW3" instance=ExtResource( 4 )]
+transform = Transform( 0.774094, 0, -0.63307, 0, 1, 0, 0.63307, 0, 0.774094, -437.304, 88.6692, 411.564 )
+
+[node name="SW4" type="Spatial" parent="Obstacles"]
+
+[node name="ScoreArea" parent="Obstacles/SW4" instance=ExtResource( 5 )]
+transform = Transform( 0.916349, 0, 0.400381, 0, 1, 0, -0.400381, 0, 0.916349, -532.728, 64.2317, 276.401 )
+
+[node name="South" parent="Obstacles/SW4" instance=ExtResource( 4 )]
+transform = Transform( 0.400381, 0, -0.916349, 0, 1, 0, 0.916349, 0, 0.400381, -532.728, 13.2317, 276.401 )
+
+[node name="SouthSky" parent="Obstacles/SW4" instance=ExtResource( 4 )]
+transform = Transform( 0.400381, 0, -0.916349, 0, 1, 0, 0.916349, 0, 0.400381, -532.728, 113.232, 276.401 )
+
+[node name="SW5" type="Spatial" parent="Obstacles"]
+
+[node name="ScoreArea" parent="Obstacles/SW5" instance=ExtResource( 5 )]
+transform = Transform( 0.929216, 0, 0.369536, 0, 1, 0, -0.369536, 0, 0.929216, -585.083, 34.7867, 132.592 )
+
+[node name="South" parent="Obstacles/SW5" instance=ExtResource( 4 )]
+transform = Transform( 0.369536, 0, -0.929216, 0, 1, 0, 0.929216, 0, 0.369536, -585.083, -16.2133, 132.592 )
+
+[node name="SouthSky" parent="Obstacles/SW5" instance=ExtResource( 4 )]
+transform = Transform( 0.369536, 0, -0.929216, 0, 1, 0, 0.929216, 0, 0.369536, -585.083, 83.7867, 132.592 )
+
+[node name="NW1" type="Spatial" parent="Obstacles"]
+
+[node name="North" parent="Obstacles/NW1" instance=ExtResource( 4 )]
+transform = Transform( 0.939022, 0, 0.343856, 0, 1, 0, -0.343856, 0, 0.939022, -156.602, -4.85944, -580.208 )
+
+[node name="NorthSky" parent="Obstacles/NW1" instance=ExtResource( 4 )]
+transform = Transform( 0.939022, 0, 0.343856, 0, 1, 0, -0.343856, 0, 0.939022, -156.602, 95.1406, -580.208 )
+
+[node name="ScoreArea" parent="Obstacles/NW1" instance=ExtResource( 5 )]
+transform = Transform( -0.343856, 0, 0.939022, 0, 1, 0, -0.939022, 0, -0.343856, -156.602, 46.1406, -580.208 )
+
+[node name="NW2" type="Spatial" parent="Obstacles"]
+
+[node name="North" parent="Obstacles/NW2" instance=ExtResource( 4 )]
+transform = Transform( 0.921219, 0, 0.389044, 0, 1, 0, -0.389044, 0, 0.921219, -291.113, 31.7966, -524.417 )
+
+[node name="NorthSky" parent="Obstacles/NW2" instance=ExtResource( 4 )]
+transform = Transform( 0.921219, 0, 0.389044, 0, 1, 0, -0.389044, 0, 0.921219, -291.113, 131.797, -524.417 )
+
+[node name="ScoreArea" parent="Obstacles/NW2" instance=ExtResource( 5 )]
+transform = Transform( -0.389044, 0, 0.921219, 0, 1, 0, -0.921219, 0, -0.389044, -291.113, 82.7966, -524.417 )
+
+[node name="NW3" type="Spatial" parent="Obstacles"]
+
+[node name="North" parent="Obstacles/NW3" instance=ExtResource( 4 )]
+transform = Transform( 0.663091, 0, 0.748539, 0, 1, 0, -0.748539, 0, 0.663091, -434.38, -0.553391, -414.299 )
+
+[node name="NorthSky" parent="Obstacles/NW3" instance=ExtResource( 4 )]
+transform = Transform( 0.663091, 0, 0.748539, 0, 1, 0, -0.748539, 0, 0.663091, -434.38, 99.4466, -414.299 )
+
+[node name="ScoreArea" parent="Obstacles/NW3" instance=ExtResource( 5 )]
+transform = Transform( -0.748539, 0, 0.66309, 0, 1, 0, -0.66309, 0, -0.748539, -434.38, 50.4466, -414.299 )
+
+[node name="NW4" type="Spatial" parent="Obstacles"]
+
+[node name="North" parent="Obstacles/NW4" instance=ExtResource( 4 )]
+transform = Transform( 0.666116, 0, 0.745848, 0, 1, 0, -0.745848, 0, 0.666116, -512.777, 21.5695, -312.076 )
+
+[node name="NorthSky" parent="Obstacles/NW4" instance=ExtResource( 4 )]
+transform = Transform( 0.666116, 0, 0.745848, 0, 1, 0, -0.745848, 0, 0.666116, -512.777, 121.569, -312.076 )
+
+[node name="ScoreArea" parent="Obstacles/NW4" instance=ExtResource( 5 )]
+transform = Transform( -0.745848, 0, 0.666116, 0, 1, 0, -0.666116, 0, -0.745848, -512.777, 72.5695, -312.076 )
+
+[node name="NW5" type="Spatial" parent="Obstacles"]
+
+[node name="North" parent="Obstacles/NW5" instance=ExtResource( 4 )]
+transform = Transform( 0.322613, 0, 0.946531, 0, 1, 0, -0.946531, 0, 0.322613, -577.239, -10.6266, -162.619 )
+
+[node name="NorthSky" parent="Obstacles/NW5" instance=ExtResource( 4 )]
+transform = Transform( 0.322613, 0, 0.946531, 0, 1, 0, -0.946531, 0, 0.322613, -577.239, 89.3734, -162.619 )
+
+[node name="ScoreArea" parent="Obstacles/NW5" instance=ExtResource( 5 )]
+transform = Transform( -0.946531, 0, 0.322613, 0, 1, 0, -0.322613, 0, -0.946531, -577.239, 40.3734, -162.619 )
 
 [node name="UI" type="CanvasLayer" parent="."]
 pause_mode = 2
@@ -161,5 +382,12 @@ text = "GAME OVER"
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.0871558, 0.996195, 0, -0.996195, 0.0871558, 0, 600, 0 )
+
+[node name="CSGSphere" type="CSGSphere" parent="."]
+transform = Transform( 600, 0, 0, 0, 1, 0, 0, 0, 600, 0, 0, 0 )
+radial_segments = 100
+
+[node name="START" type="CSGBox" parent="."]
+transform = Transform( 2, 0, 0, 0, 30, 0, 0, 0, 2, 326.855, 0, 434.18 )
 
 [connection signal="pressed" from="UI/Button" to="." method="_on_Button_pressed"]

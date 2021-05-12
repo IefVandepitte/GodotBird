@@ -17,5 +17,5 @@ signal crashed
 
 	 
 func _on_ObstacleRigidBody_body_entered(body):
-	print("crash")
+#	print("crash")
 	emit_signal("crashed")

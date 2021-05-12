@@ -25,7 +25,10 @@ func _on_score_collision():
 	$UI/Label.text = "Score: %s" % score
 	
 func _on_obstacle_crash():
-	if crashes >= 4 :
+	print(crashes)
+	if crashes == 23 :
+		score = 0
+	if crashes > 23 :
 		gameState = "ended"
 		get_tree().paused = true
 		$UI/GameOverControl.visible = true
